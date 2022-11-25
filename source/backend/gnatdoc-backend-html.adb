@@ -184,6 +184,11 @@ package body GNATdoc.Backend.HTML is
               Entity_Information_Set_Proxy'
                 (Index_Entities => Self.Entity.Subprograms'Unchecked_Access);
 
+         elsif Name = "entries" then
+            return
+              Entity_Information_Set_Proxy'
+                (Index_Entities => Self.Entity.Entries'Unchecked_Access);
+
          elsif Name = "exceptions" then
             return
               Entity_Information_Set_Proxy'
