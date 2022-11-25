@@ -137,7 +137,7 @@ procedure Test_Extractor is
             return Into;
 
          when Ada_Subp_Decl | Ada_Null_Subp_Decl | Ada_Abstract_Subp_Decl
-            | Ada_Expr_Function
+            | Ada_Expr_Function | Ada_Entry_Decl
          =>
             Extract_And_Dump;
 
@@ -147,6 +147,11 @@ procedure Test_Extractor is
             Extract_And_Dump;
 
             return Over;
+
+         when Ada_Single_Task_Decl | Ada_Task_Type_Decl =>
+            Extract_And_Dump;
+
+            return Into;
 
          when others =>
             return Into;
